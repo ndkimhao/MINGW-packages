@@ -52,9 +52,9 @@
 +                LINUX_X64=True
 +            else:
 +                LINUX_X64=False
-             
  
- def display_help(exit_code):
+             
+ if os.name == 'posix' and os.uname()[4] == 'arm64':
 @@ -2010,6 +2017,9 @@
                  # Some ocamlmklib's don't like -g; observed on cygwin, but may be others as well.
                  OCAMLMKLIB += ' -g'

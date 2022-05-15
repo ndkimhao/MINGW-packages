@@ -3,7 +3,7 @@
 _realname=z3
 pkgbase=mingw-w64-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-${_realname}")
-pkgver=4.8.15
+pkgver=4.8.17
 pkgrel=2
 pkgdesc="Z3 is a high-performance theorem prover being developed at Microsoft Research (mingw-w64)"
 arch=('any')
@@ -21,8 +21,8 @@ source=("${_realname}-${pkgver}.tar.gz"::"https://github.com/Z3Prover/z3/archive
         003-fix-dll-exports.patch
         004-fix-python-bindings-install.patch
         005-fix-clang.patch)
-sha256sums=('2abe7f5ecb7c8023b712ffba959c55b4515f4978522a6882391de289310795ac'
-            '002c820f2334406103c29173df6dfc92793909c5b69ed6108a67aa7c7f6eb19d'
+sha256sums=('1e57637ce8d5212fd38453df28e2730a18e0a633f723682267be87f5b858a126'
+            '59dd6378a19b150a83f98cf47ef1fae8469df7eabb685da3dfeeac02ace994d5'
             'ce01668afae8e60c32a0d7937d3f8f67a7dc23aa4270913d157e676d061dfe6a'
             '287f0f8d1e73ecee15c644efb7ecf0eeab293e2d727d107ffc31b71f77909080'
             '51c2d1071845efbe29e2b38124d7ce7ef210e8441294cd2d53df65348874118a')
