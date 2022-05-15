@@ -3,7 +3,7 @@
 _realname=jemalloc
 pkgbase=mingw-w64-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-${_realname}")
-pkgver=5.2.1
+pkgver=5.3.0
 pkgrel=2
 pkgdesc="General-purpose scalable concurrent malloc implementation (mingw64)"
 arch=('any')
@@ -15,18 +15,15 @@ makedepends=("${MINGW_PACKAGE_PREFIX}-docbook-xsl" "${MINGW_PACKAGE_PREFIX}-auto
 options=(strip staticlibs !debug)
 source=("https://github.com/jemalloc/jemalloc/releases/download/${pkgver}/${_realname}-${pkgver}.tar.bz2"
         001-fix-library-extension.patch
-        002-makefile.patch
-        003-mingw-non-x86.patch)
-sha256sums=('34330e5ce276099e2e8950d9335db5a875689a4c6a56751ef3b1d8c537f887f6'
+        002-makefile.patch)
+sha256sums=('2db82d1e7119df3e71b7640219b6dfe84789bc0537983c3b7ac4f7189aecfeaa'
             '74569f3e709855f53b83212efa7641b1b4b4f84442ba8c0729813bc214f18230'
-            '2d92c7e273a25e4a2f12927a3418c4ff8744962eb941f838e35f94bee46ec841'
-            '4e04db45cd7f0e06d8d7e35fb43d878050a329c97fe17d472c1ecebe8c24c56d')
+            'bbd92dee3bc1d321a611d96992f6f68991072d52a525ff0f31239037d6284c66')
 
 prepare() {
   cd ${srcdir}/${_realname}-${pkgver}
   patch -p1 -i ${srcdir}/001-fix-library-extension.patch
   patch -p1 -i ${srcdir}/002-makefile.patch
-  patch -p1 -i ${srcdir}/003-mingw-non-x86.patch
 }
 
 build() {
